@@ -154,10 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mazes:
   - {fileID: 2672907970840971705, guid: 8940ca4cca0464f42a5a92f298d723f2, type: 3}
-  - {fileID: 2672907970840971705, guid: 8940ca4cca0464f42a5a92f298d723f2, type: 3}
-  - {fileID: 2672907970840971705, guid: 8940ca4cca0464f42a5a92f298d723f2, type: 3}
-  - {fileID: 2672907970840971705, guid: 8940ca4cca0464f42a5a92f298d723f2, type: 3}
-  - {fileID: 2672907970840971705, guid: 8940ca4cca0464f42a5a92f298d723f2, type: 3}
+  - {fileID: 9133751129347389107, guid: 9add6bd94422a3d499a4cb4d3461b179, type: 3}
+  - {fileID: 2150611549506473371, guid: 0ebe609478780124d9d6c1bcb71cd089, type: 3}
+  - {fileID: 5820023553722748792, guid: 5d359210f7ca4684ea666cded8b06ed6, type: 3}
+  - {fileID: 8183416063359935981, guid: 4c44bb99f2d15e640af08039836eb9e5, type: 3}
   height: 0.1
 --- !u!4 &268208525
 Transform:
