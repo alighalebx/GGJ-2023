@@ -9,14 +9,16 @@ public class Randomizer : MonoBehaviour
     private GameObject cur;
     private float timer = 0;
     private float[] total_timer = { 5, 5.5f, 5.7f, 6.3f};
-    private int l = 0;
+    int l = 0;
+    // Start is called before the first frame update
     void Start()
     {
         int r = Random.Range(0, 5);
         cur = Instantiate(Mazes[r]);
         l = r;
-        cur.transform.position = new Vector3(0, 0, 0);
+        cur.transform.position = new Vector3(0,0,0);
     }
+    // Update is called once per frame
     void Update()
     {
         if (timer < total_timer[3])
@@ -45,10 +47,10 @@ public class Randomizer : MonoBehaviour
             }
             l = r;
             cur = Instantiate(Mazes[r]);
-            cur.transform.position = new Vector3(0,-25f,0);
+            cur.transform.position = new Vector3(0,-2.5f,0);
             timer = total_timer[2];
         }
-        else if (cur.transform.position.y < 0)
+        else
         {
             cur.transform.position += new Vector3(0, height, 0);
         }
