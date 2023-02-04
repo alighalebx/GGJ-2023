@@ -6,7 +6,6 @@ using ArabicSupport;
 
 public class Ttile : MonoBehaviour
 {
-
     Text text;
     // Start is called before the first frame update
     void Start()
@@ -19,5 +18,4 @@ public class Ttile : MonoBehaviour
     {
         text.text = ArabicFixer.Fix(text.text);
     }
-
 }
