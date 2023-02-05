@@ -5,28 +5,40 @@ using UnityEngine;
 public class MenuCursorFollower : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
-    private float yaw = -149.495f, pitch = 8.329f;
+    [SerializeField] float startX;
+    [SerializeField] float startY;
+    [SerializeField] float yRightLimit;
+    [SerializeField] float yLeftLimit;
+    [SerializeField] float xUpLimit;
+    [SerializeField] float xDownLimit;
+    private float yaw, pitch;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        yaw = startY; pitch = startX;
+        Time.timeScale = 1;
+    }
+
     void Update()
     {
+
         yaw += Input.GetAxis("Mouse X") * moveSpeed;
         pitch -= Input.GetAxis("Mouse Y") * moveSpeed;
-        if (yaw <= -150f) 
+        if (yaw <= yLeftLimit) 
         {
-            yaw = -150f;
+            yaw = yLeftLimit;
         }
-        if (yaw >= -148f)
+        if (yaw >= yRightLimit)
         {
-            yaw = -148f;
+            yaw = yRightLimit;
         }
-        if (pitch <= 7f)
+        if (pitch <= xDownLimit)
         {
-            pitch = 7f;
+            pitch = xDownLimit;
         }
-        if (pitch >= 12f)
+        if (pitch >= xUpLimit)
         {
-            pitch = 12f;
+            pitch = xUpLimit;
         }
 
         transform.eulerAngles = new Vector3(pitch, yaw, -3.209f);

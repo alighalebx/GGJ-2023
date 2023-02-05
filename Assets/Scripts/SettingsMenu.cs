@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -47,4 +48,21 @@ public class SettingsMenu : MonoBehaviour
     {
         canvas.SetActive(false);
     }
+
+    public void resumeGame()
+    {
+        canvas.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void quitGame() 
+    {
+        Application.Quit();    
+    }
+
+    public void openMainMenu() 
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
