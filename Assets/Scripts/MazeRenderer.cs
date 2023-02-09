@@ -41,6 +41,10 @@ public class MazeRenderer : MonoBehaviour
         {
             for (int j = 0; j < height; ++j)
             {
+                if(i==0 && j==0)
+                { continue; }
+                if(i==width-1 && j==height-1)
+                { continue; }
                 var cell = maze[i, j];
                 var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
 
