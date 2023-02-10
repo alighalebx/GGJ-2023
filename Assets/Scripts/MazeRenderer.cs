@@ -5,6 +5,8 @@ using UnityEngine;
 public class MazeRenderer : MonoBehaviour
 {
 
+    public bool Randomize = false;
+
     [SerializeField]
     [Range(1, 50)]
     private int width = 10;
@@ -21,7 +23,7 @@ public class MazeRenderer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (/*Input.GetKeyDown(KeyCode.Space)*/ Randomize)
         {
            var maze = MazeGenerator.Generate(width, height);
            var currentMaze = maze;
