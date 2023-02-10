@@ -5,7 +5,7 @@ using UnityEngine;
 public class MazeRenderer : MonoBehaviour
 {
 
-    public bool Randomize = false;
+    //public bool Randomize = false;
 
     [SerializeField]
     [Range(1, 50)]
@@ -23,17 +23,22 @@ public class MazeRenderer : MonoBehaviour
 
     private void Update()
     {
-        if (/*Input.GetKeyDown(KeyCode.Space)*/ Randomize)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-           var maze = MazeGenerator.Generate(width, height);
-           var currentMaze = maze;
-            for (var i = transform.childCount - 1; i >= 0; i--)
-            {
-                Destroy(transform.GetChild(i).gameObject);
-            }
-            Draw(maze);
+            buildNewMaze();
         }
-        
+
+    }
+
+    private void buildNewMaze()
+    {
+        var maze = MazeGenerator.Generate(width, height);
+        var currentMaze = maze;
+        for (var i = transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+        Draw(maze);
     }
 
     private void Draw(WallState[,] maze)
