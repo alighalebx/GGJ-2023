@@ -1,5 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using Random = System.Random;
 
 [System.Serializable]
 public class WeightedRandomList<T>
@@ -37,18 +41,20 @@ public class WeightedRandomList<T>
         //{
         //    totalWeight += p.weight;
         //}
+        Random R = new Random();
 
-        float value = Random.value;
+        int someRandomNumber = R.Next(0, list.Count());
+
+        //float value = Random.value();
 
         //float sumWeight = 0;
 
-        foreach (Pair p in list)
-        {
+        
             //sumWeight += p.weight;
 
-                return p;
+        return list.ElementAt(someRandomNumber);
             
-        }
+        
 
         return default(Pair);
     }
